@@ -34,7 +34,7 @@
 		</p>
 		<ul>
 			<li><strong><u>Actor Profile</u></strong></li>
-			<li>Actor ID --&gt <em>PK</em></li>
+			<li>Actor ID &rarr; <em>PK</em></li>
 			<li>Actor Name</li>
 			<li>Birthday</li>
 			<li>Birth Name</li>
@@ -42,14 +42,14 @@
 		</ul>
 		<ul>
 			<li><strong><u>Actor Biography</u></strong></li>
-			<li>Bio ID --&gt <em>PK</em></li>
-			<li>Actor ID --&gt <em>FK</em></li>
+			<li>Bio ID &rarr; <em>PK</em></li>
+			<li>Actor ID &rarr; <em>FK</em></li>
 			<li>Biography Entry</li>
 		</ul>
 		<ul>
 			<li><strong><u>Actor Trivia</u></strong></li>
-			<li>Trivia ID --&gt <em>PK</em></li>
-			<li>Actor ID --&gt<em>FK</em></li>
+			<li>Trivia ID &rarr; <em>PK</em></li>
+			<li>Actor ID &rarr; <em>FK</em></li>
 			<li>Trivia Entry</li>
 		</ul>
 	</body>
