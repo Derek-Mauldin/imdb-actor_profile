@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Actor Profile</title>
+
 		<style>
 			table, th, td {
 				border: 1px solid black;
@@ -22,6 +23,7 @@
 			Katy is very knowledgeable about many actors and may have something to contribute to the database.<br>
 			Katy will be using her PC and Mobile devices.
 		</p>
+
 		<h2>Use Case 1</h2>
 		<p>Goal: Katy is looking for more information on an actor the he/she is unfamiliar with</p>
 		<ul>
@@ -29,6 +31,7 @@
 			<li>Katy will click on the button that displays the general characteristics of the actor</li>
 			<li>General Bio will be displayed</li>
 		</ul>
+
 		<h2>Use Case 2</h2>
 		<p>Goal: User is looking to update information on an actor that he/she is very famaliar with</p>
 		<ul>
@@ -39,6 +42,7 @@
 			<li>Katy will enter info into the form</li>
 			<li>Katy will submit form</li>
 		</ul>
+
 		<h2>Conceptual Model</h2>
 		<p>
 			The Actor Profile table will have a <strong>One to One Relationship</strong> with the Actor Biography Table.<br>
