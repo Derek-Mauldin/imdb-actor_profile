@@ -8,7 +8,8 @@
 		<h1>Persona</h1>
 		<p>
 			A dedicated and knowledgeable Movie & Television fan, Katy, wants to research and profile actors and their work.
-			Katy is very knowledgeable about many actors and may have something to contribute to the database.
+			Katy is very knowledgeable about many actors and may have something to contribute to the database.<br>
+			Katy will be using her PC and Mobile devices.
 		</p>
 		<h2>Use Case 1</h2>
 		<p>Goal: Katy is looking for more information on an actor the he/she is unfamiliar with</p>
@@ -27,27 +28,29 @@
 			<li>Katy will enter info into the form</li>
 			<li>Katy will submit form</li>
 		</ul>
-		<h2>Entities</h2>
+		<h2>Conceptual Model</h2>
 		<p>
 			The Actor Profile table will have a <strong>One to One Relationship</strong> with the Actor Biography Table.<br>
 			The Actor Profile table will have a <strong>One to Many Relationship</strong> with the Actor Triva Table.<br>
 		</p>
+		<p><strong>Actor Profile</strong></p>
 		<ul>
-			<li><strong><u>Actor Profile</u></strong></li>
 			<li>Actor ID &rarr; <em>PK</em></li>
 			<li>Actor Name</li>
 			<li>Birthday</li>
 			<li>Birth Name</li>
 			<li>Height</li>
 		</ul>
+		<br>
+		<p><strong>Actor Biography</strong></p>
 		<ul>
-			<li><strong><u>Actor Biography</u></strong></li>
 			<li>Bio ID &rarr; <em>PK</em></li>
 			<li>Actor ID &rarr; <em>FK</em></li>
 			<li>Biography Entry</li>
 		</ul>
+		<br>
+		<p><strong>Actor Trivia</strong></p>
 		<ul>
-			<li><strong><u>Actor Trivia</u></strong></li>
 			<li>Trivia ID &rarr; <em>PK</em></li>
 			<li>Actor ID &rarr; <em>FK</em></li>
 			<li>Trivia Entry</li>
