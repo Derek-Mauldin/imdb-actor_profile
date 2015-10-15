@@ -1,5 +1,6 @@
 <!DOCTYPE html lang="en">
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<title>Actor Profile</title>
@@ -9,10 +10,11 @@
 				border-collapse: collapse;
 			}
 			th, td {
-				padding: 5px;
+				padding: 3px;
 			}
 		</style>
 	</head>
+
 	<body>
 		<h1>Persona</h1>
 		<p>
@@ -42,6 +44,7 @@
 			The Actor Profile table will have a <strong>One to One Relationship</strong> with the Actor Biography Table.<br>
 			The Actor Profile table will have a <strong>One to Many Relationship</strong> with the Actor Triva Table.<br>
 		</p>
+
 		<table style="width:15%">
 			<tr><th>Actor Profile</th></tr>
 			<tr><td>Actor ID &rarr; <em>PK</em></td></tr>
@@ -51,6 +54,7 @@
 			<tr><td>Height</td></tr>
 		</table>
 		<br>
+
 		<table style="width:15%">
 			<tr><th>Actor Biography</th></tr>
 			<tr><td>Bio ID &rarr; <em>PK</em></td></tr>
@@ -58,11 +62,13 @@
 			<tr><td>Biography Entry</td></tr>
 		</table>
 		<br>
+
 		<table style="width:15%">
 			<tr><th>Actor Trivia</th></tr>
 			<tr><td>Trivia ID &rarr; <em>PK</em></td></tr>
 			<tr><td>Actor ID &rarr; <em>FK</em></td></tr>
 			<tr><td>Trivia Entry</td></tr>
 		</table>
+
 	</body>
 </html>
