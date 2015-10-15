@@ -33,27 +33,27 @@
 			The Actor Profile table will have a <strong>One to One Relationship</strong> with the Actor Biography Table.<br>
 			The Actor Profile table will have a <strong>One to Many Relationship</strong> with the Actor Triva Table.<br>
 		</p>
-		<p><strong>Actor Profile</strong></p>
-		<ul>
-			<li>Actor ID &rarr; <em>PK</em></li>
-			<li>Actor Name</li>
-			<li>Birthday</li>
-			<li>Birth Name</li>
-			<li>Height</li>
-		</ul>
+		<table style="width:15%" border="black">
+			<tr><th>Actor Profile</th></tr>
+			<tr><td>Actor ID &rarr; <em>PK</em></td></tr>
+			<tr><td>Actor Name</td></tr>
+			<tr><td>Birthday</td></tr>
+			<tr><td>Birth Name</td></tr>
+			<tr><td>Height</td></tr>
+		</table>
 		<br>
-		<p><strong>Actor Biography</strong></p>
-		<ul>
-			<li>Bio ID &rarr; <em>PK</em></li>
-			<li>Actor ID &rarr; <em>FK</em></li>
-			<li>Biography Entry</li>
-		</ul>
+		<table style="width:15%" border="black">
+			<tr><th>Actor Biography</th></tr>
+			<tr><td>Bio ID &rarr; <em>PK</em></td></tr>
+			<tr><td>Actor ID &rarr; <em>FK</em></td></tr>
+			<tr><td>Biography Entry</td></tr>
+		</table>
 		<br>
-		<p><strong>Actor Trivia</strong></p>
-		<ul>
-			<li>Trivia ID &rarr; <em>PK</em></li>
-			<li>Actor ID &rarr; <em>FK</em></li>
-			<li>Trivia Entry</li>
-		</ul>
+		<table style="width:15%" border="black">
+			<tr><th>Actor Trivia</th></tr>
+			<tr><td>Trivia ID &rarr; <em>PK</em></td></tr>
+			<tr><td>Actor ID &rarr; <em>FK</em></td></tr>
+			<tr><td>Trivia Entry</td></tr>
+		</table>
 	</body>
 </html>
