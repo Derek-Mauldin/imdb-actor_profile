@@ -17,7 +17,11 @@
 	</head>
 
 	<body>
-		<h1>Persona</h1>
+
+		<h1>Data Design Project</h1>
+		<br>
+
+		<h2>Persona</h2>
 		<p>
 			A dedicated and knowledgeable Movie & Television fan, Katy, wants to research and profile actors and their work.
 			Katy is very knowledgeable about many actors and may have something to contribute to the database.<br>
@@ -46,7 +50,7 @@
 		<h2>Conceptual Model</h2>
 		<p>
 			The Actor Profile table will have a <strong>One to One Relationship</strong> with the Actor Biography Table.<br>
-			The Actor Profile table will have a <strong>One to Many Relationship</strong> with the Actor Triva Table.<br>
+			The Actor Profile table will have a <strong>One to Many Relationship</strong> with the Actor Trivia Table.<br>
 		</p>
 
 		<table style="width:15%">
