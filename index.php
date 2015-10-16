@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<title>Actor Profile</title>
+		<title>Data Design Project</title>
 
 		<style>
 			table, th, td {
