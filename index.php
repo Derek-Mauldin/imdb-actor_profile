@@ -77,8 +77,23 @@
 			<tr><td>Actor ID &rarr; <em>FK</em></td></tr>
 			<tr><td>Trivia Entry</td></tr>
 		</table>
+		<br>
 
+		<h2>ERD</h2>
 		<img src="img/erd.svg" />
+
+		<h2>DDL</h2>
+			<p>
+				CREATE TABLE actorProfile (
+				actorId INT UNSIGNED AUTO_INCREMENT NOT NULL,
+				actorName VARCHAR (40) NOT NULL,
+				birthday DATE,
+				birthName VARCHAR(40),
+				height VARCHAR(15),
+				INDEX(actorName),
+				PRIMARY KEY(actorId)
+				);
+			</p>
 
 	</body>
 </html>
