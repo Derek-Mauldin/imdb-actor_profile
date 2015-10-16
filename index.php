@@ -78,5 +78,7 @@
 			<tr><td>Trivia Entry</td></tr>
 		</table>
 
+		<img src="img/erd.svg" />
+
 	</body>
 </html>
