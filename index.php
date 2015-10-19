@@ -83,17 +83,17 @@
 		<img src="img/erd.svg" />
 
 		<h2>DDL</h2>
-			<p>
-				CREATE TABLE actorProfile (
-				actorId INT UNSIGNED AUTO_INCREMENT NOT NULL,
-				actorName VARCHAR (40) NOT NULL,
-				birthday DATE,
-				birthName VARCHAR(40),
-				height VARCHAR(15),
-				INDEX(actorName),
-				PRIMARY KEY(actorId)
-				);
-			</p>
+			<code>
+				CREATE TABLE actorProfile (<br>
+				<span>&#9;</span>INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
+				&tab; actorName VARCHAR (40) NOT NULL,<br>
+				&tab;birthday DATE,<br>
+				&tab;birthName VARCHAR(40),<br>
+				&tab;height VARCHAR(15),<br>
+				&tab;INDEX(actorName),<br>
+				&tab;PRIMARY KEY(actorId)<br>
+				);<br>
+			</code>
 
 	</body>
 </html>
