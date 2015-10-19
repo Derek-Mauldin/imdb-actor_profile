@@ -82,18 +82,47 @@
 		<h2>ERD</h2>
 		<img src="img/erd.svg" />
 
-		<h2>DDL</h2>
-			<code>
-				CREATE TABLE actorProfile (<br>
-				<span>&#9;</span>INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
-				&tab; actorName VARCHAR (40) NOT NULL,<br>
-				&tab;birthday DATE,<br>
-				&tab;birthName VARCHAR(40),<br>
-				&tab;height VARCHAR(15),<br>
-				&tab;INDEX(actorName),<br>
-				&tab;PRIMARY KEY(actorId)<br>
-				);<br>
-			</code>
+		<h2>
+			<p>>DDL</h2>
+			<p>
+				<table>
+					<tr>
+						<td>
+							CREATE TABLE actorProfile (<br>
+							&emsp;actorIdINT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
+							&emsp;actorName VARCHAR (40) NOT NULL,<br>
+							&emsp;birthday DATE,<br>
+							&emsp;birthName VARCHAR(40),<br>
+							&emsp;height VARCHAR(15),<br>
+							&emsp;INDEX(actorName),<br>
+							&emsp;PRIMARY KEY(actorId)<br>
+							);
+						</td>
+
+						<td>
+							CREATE TABLE actorBio (<br>
+							&emsp;bioId INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
+							&emsp;actorId INT UNSIGNED NOT NULL,<br>
+							&emsp;bioEntry VARCHAR(1000) NOT NULL,<br>
+							&emsp;INDEX(actorId),<br>
+							&emsp;FOREIGN KEY(actorId) REFERENCES actorProfile(actorId),<br>
+							&emsp;PRIMARY KEY(bioId)<br>
+							);
+						</td>
+
+						<td>
+							CREATE TABLE trivia (<br>
+							&emsp;triviaId INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
+							&emsp;actorId INT UNSIGNED NOT NULL,<br>
+							&emsp;triviaEntry VARCHAR(1000) NOT NULL,<br>
+							&emsp;INDEX(actorId),<br>
+							&emsp;FOREIGN KEY(actorId) REFERENCES actorProfile(actorId),<br>
+							&emsp;PRIMARY KEY(triviaID)<br>
+							);
+						</td>
+					</tr>
+				</table>
+			</p>
 
 	</body>
 </html>
