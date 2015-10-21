@@ -210,7 +210,7 @@ class ActorProfile {
 			throw(new RangeException("Height entry is to large  Maximum 15 characters"));
 		}
 
-		// store actor name
+		// store actor height
 		$this->height = $newHeight;
 	}
 
