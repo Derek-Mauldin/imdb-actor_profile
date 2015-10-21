@@ -2,6 +2,8 @@
 
 class actorProfile {
 
+	require_once "php/date-utils.php"
+
 	/**
 	 * ID for this actor; primary key
 	 * @var int $actorId
@@ -121,8 +123,9 @@ class actorProfile {
 	 **/
 	public function setBirthday($newBirthday) {
 
-		// base case if $newBirthday
-		$newBirthday = trim($newBirthday);
+		try {
+			$newBirthday =
+		}
 
 
 
