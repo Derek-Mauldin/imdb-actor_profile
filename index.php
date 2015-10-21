@@ -1,5 +1,5 @@
-<!DOCTYPE html lang="en">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 	<head>
 		<meta charset="utf-8">
@@ -10,9 +10,7 @@
 				border: 1px solid black;
 				border-collapse: collapse;
 			}
-			th, td {
-				padding: 3px;
-			}
+
 		</style>
 	</head>
 
@@ -82,47 +80,44 @@
 		<h2>ERD</h2>
 		<img src="img/erd.svg" />
 
-		<h2>
-			<p>>DDL</h2>
-			<p>
-				<table>
-					<tr>
-						<td>
-							CREATE TABLE actorProfile (<br>
-							&emsp;actorIdINT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
-							&emsp;actorName VARCHAR (40) NOT NULL,<br>
-							&emsp;birthday DATE,<br>
-							&emsp;birthName VARCHAR(40),<br>
-							&emsp;height VARCHAR(15),<br>
-							&emsp;INDEX(actorName),<br>
-							&emsp;PRIMARY KEY(actorId)<br>
-							);
-						</td>
+		<h2>DDL</h2>
+		<table style="width:105%">
+			<tr>
+				<td>
+					CREATE TABLE actorProfile (<br>
+					&emsp;actorId INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
+					&emsp;actorName VARCHAR (40) NOT NULL,<br>
+					&emsp;birthday DATE,<br>
+					&emsp;birthName VARCHAR(40),<br>
+					&emsp;height VARCHAR(15),<br>
+					&emsp;INDEX(actorName),<br>
+					&emsp;PRIMARY KEY(actorId)<br>
+					);
+				</td>
 
-						<td>
-							CREATE TABLE actorBio (<br>
-							&emsp;bioId INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
-							&emsp;actorId INT UNSIGNED NOT NULL,<br>
-							&emsp;bioEntry VARCHAR(1000) NOT NULL,<br>
-							&emsp;INDEX(actorId),<br>
-							&emsp;FOREIGN KEY(actorId) REFERENCES actorProfile(actorId),<br>
-							&emsp;PRIMARY KEY(bioId)<br>
+				<td>
+					CREATE TABLE actorBio (<br>
+					&emsp;bioId INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
+					&emsp;actorId INT UNSIGNED NOT NULL,<br>
+					&emsp;bioEntry VARCHAR(1000) NOT NULL,<br>
+					&emsp;INDEX(actorId),<br>
+					&emsp;FOREIGN KEY(actorId) REFERENCES actorProfile(actorId),<br>
+					&emsp;PRIMARY KEY(bioId)<br>
 							);
-						</td>
+				</td>
 
-						<td>
-							CREATE TABLE trivia (<br>
-							&emsp;triviaId INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
-							&emsp;actorId INT UNSIGNED NOT NULL,<br>
-							&emsp;triviaEntry VARCHAR(1000) NOT NULL,<br>
-							&emsp;INDEX(actorId),<br>
-							&emsp;FOREIGN KEY(actorId) REFERENCES actorProfile(actorId),<br>
-							&emsp;PRIMARY KEY(triviaID)<br>
+				<td>
+					CREATE TABLE trivia (<br>
+					&emsp;triviaId INT UNSIGNED AUTO_INCREMENT NOT NULL,<br>
+					&emsp;actorId INT UNSIGNED NOT NULL,<br>
+					&emsp;triviaEntry VARCHAR(1000) NOT NULL,<br>
+					&emsp;INDEX(actorId),<br>
+					&emsp;FOREIGN KEY(actorId) REFERENCES actorProfile(actorId),<br>
+					&emsp;PRIMARY KEY(triviaId)<br>
 							);
-						</td>
-					</tr>
-				</table>
-			</p>
+				</td>
+			</tr>
+		</table>
 
 	</body>
 </html>
