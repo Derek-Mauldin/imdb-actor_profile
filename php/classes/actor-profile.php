@@ -1,8 +1,9 @@
 <?php
 
-class actorProfile {
+require_once(dirname(__DIR__) . "/lib/date-utils.php");
 
-	require_once "php/date-utils.php"
+
+class ActorProfile {
 
 	/**
 	 * ID for this actor; primary key
@@ -69,7 +70,7 @@ class actorProfile {
 
 		// validate that $newActorId is positive
 		if($newActorId <= 0) {
-			throw(new RangeException("Actor ID is not a positive number"))
+			throw(new RangeException("Actor ID is not a positive number"));
 		}
 
 		// convert and store the actor ID
@@ -89,7 +90,7 @@ class actorProfile {
 	/**
 	 * Mutator Method for actor name
 	 *
-	 * @param mixed $newActorName: ID value for a new actor
+	 * @param mixed $newActorName: name for for a new actor
 	 * @throws InvalidArgumentException if $newActorName is insecure or empty
 	 * @throws RangeException if $newActorName is too large for the database
 	 *
@@ -105,30 +106,11 @@ class actorProfile {
 
 		// verify the new actor name will fit the database
 		if(strlen($newActorName) > 40) {
-			throw(new RangeException("Actor Name is too large"))
+			throw(new RangeException("Actor Name is too large"));
 		}
 
 		// store actor name
 		$this->actorName = $newActorName;
-
-	}
-
-	/**
-	 * Mutator Method for actor name
-	 *
-	 * @param mixed $newActorName: ID value for a new actor
-	 * @throws InvalidArgumentException if $newActorName is insecure or empty
-	 * @throws RangeException if $newActorName is too large for the database
-	 *
-	 **/
-	public function setBirthday($newBirthday) {
-
-		try {
-			$newBirthday =
-		}
-
-
-
 
 	}
 
@@ -142,6 +124,27 @@ class actorProfile {
 		return($this->birthday);
 	}
 
+	/**
+	 * Mutator Method for birthday
+	 *
+	 * @param mixed $newBirthday: birthday for a new actor
+	 * @throws InvalidArgumentException if the date is in an invalid format
+	 * @throws RangeException if the date is not a Gregorian date
+	 *
+	 **/
+	public function setBirthday($newBirthday) {
+
+		try {
+			$newBirthday = validateDate($newBirthday);
+		} 	catch(InvalidArgumentException $invalidArgument) {
+			throw(new InvalidArgumentException($invalidArgument->getMessage(), 0, $invalidArgument));
+		}	catch(RangeException $range) {
+			throw(new RangeException($range->getMessage(), 0, $range));
+		}
+
+		$this->birthday = $newBirthday;
+
+	}
 
 	/**
 	 *Accessor Method for this actors birth name
@@ -150,6 +153,32 @@ class actorProfile {
 	 **/
 	public function getBirthName() {
 		return($this->birthName);
+	}
+
+	/**
+	 * Mutator Method for actors birth name
+	 *
+	 * @param mixed $newBirthName: birth name for a new actor
+	 * @throws InvalidArgumentException if $newBirthName is insecure or empty
+	 * @throws RangeException if $newBirthName is to large for the database
+	 *
+	 **/
+	public function setBirthName($newBirthName) {
+
+		// verify that that $newBirthName is secure
+		$newBirthName = trim($newBirthName);
+		$newBirthName = filter_var($newBirthName, FILTER_SANITIZE_STRING);
+		if(empty($newBirthName) === true) {
+			throw(new InvalidArgumentException("Birth Name is insecure or empty"));
+		}
+
+		// verify the new actor name will fit the database
+		if(strlen($newBirthName) > 40) {
+			throw(new RangeException("Birth Name is too large"));
+		}
+
+		// store actor name
+		$this->birthName = $newBirthName;
 	}
 
 	/**

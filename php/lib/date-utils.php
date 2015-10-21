@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: derekmauldin
- * Date: 10/21/15
- * Time: 4:05 PM
- */
 
 /**
  * custom filter for mySQL style dates
