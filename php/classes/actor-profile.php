@@ -106,7 +106,7 @@ class ActorProfile {
 
 		// verify the new actor name will fit the database
 		if(strlen($newActorName) > 40) {
-			throw(new RangeException("Actor Name is too large"));
+			throw(new RangeException("Actor Name is too large.  Maximum 40 characters"));
 		}
 
 		// store actor name
@@ -174,11 +174,12 @@ class ActorProfile {
 
 		// verify the new actor name will fit the database
 		if(strlen($newBirthName) > 40) {
-			throw(new RangeException("Birth Name is too large"));
+			throw(new RangeException("Birth Name is too large.  Maximum 40 characters"));
 		}
 
 		// store actor name
 		$this->birthName = $newBirthName;
+
 	}
 
 	/**
@@ -189,6 +190,30 @@ class ActorProfile {
 	public function getHeight() {
 		return($this->height);
 	}
+
+	/**
+	 *Mutator Method for this actors height
+	 *
+	 *
+	 **/
+	public function setHeight($newHeight) {
+
+		// verify that that $newHeight is secure
+		$newHeight = trim($newHeight);
+		$newHeight = filter_var($newHeight, FILTER_SANITIZE_STRING);
+		if(empty($newHeight) === true) {
+			throw(new InvalidArgumentException("Height entry is insecure or empty"));
+		}
+
+		// verify the new height entry will fit the database
+		if(strlen($newHeight) > 15) {
+			throw(new RangeException("Height entry is to large  Maximum 15 characters"));
+		}
+
+		// store actor name
+		$this->height = $newHeight;
+	}
+
 
 }  // close class actorProfile
 
