@@ -3,6 +3,14 @@
 require_once(dirname(__DIR__) . "/lib/date-utils.php");
 
 
+
+/**
+ * Actor Profile Class
+ *
+ * This class contains the personal information of an actor
+ *
+ * @author Derek Mauldin <dmauldin2@cnm.edu>
+ **/
 class ActorProfile {
 
 	/**
@@ -40,7 +48,7 @@ class ActorProfile {
 	/**
 	 * constructor for this new actore
 	 *
-	 * @param mixed $newActorId for this actor
+	 * @param mixed $newActorId new ID for this actor
 	 * @param string $newActorName name for this actor
 	 * @param string $newBirthday birthday for this actor
 	 * @param string $newBirthName date birth name for this actor
