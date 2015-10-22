@@ -28,7 +28,7 @@ function validateDate($newDate) {
 	// verify the date is really a valid calendar date
 	$year   = intval($matches[1]);
 	$month  = intval($matches[2]);
-	$day	= intval($matches[3]);
+	$day	  = intval($matches[3]);
 	$hour   = intval($matches[4]);
 	$minute = intval($matches[5]);
 	$second = intval($matches[6]);

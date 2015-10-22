@@ -38,6 +38,36 @@ class ActorProfile {
 
 
 	/**
+	 * constructor for this new actore
+	 *
+	 * @param mixed $newActorId for this actor
+	 * @param string $newActorName name for this actor
+	 * @param string $newBirthday birthday for this actor
+	 * @param string $newBirthName date birth name for this actor
+	 * @param string $newHeight height of this actor
+	 * @throws InvalidArgumentException if data types are not valid
+	 * @throws RangeException if data values are out of bounds (e.g., strings too long, negative integers)
+	 * @throws Exception if some other exception is thrown
+	 **/
+	public function __construct($newActorId, $newActorName, $newBirthday, $newBirthName, $newHeight) {
+
+		try {
+				$this->setActorId($newActorId);
+				$this->setActorName($newActorName);
+				$this->setBirthday($newBirthday);
+				$this->setBirthName($newBirthName);
+				$this->setHeight($newHeight);
+		}	catch(InvalidArgumentException $invalidArgument) {
+					throw(new InvalidArgumentException($invalidArgument->getmessage(), 0, $invalidArgument));
+		}	catch(RangeException $range) {
+					throw(new RangeException($range->getMessage(), 0, $range));
+		}	catch(Exception $exception) {
+					throw(new Exception($exception->getMessage(), 0, $exception));
+		}
+
+	}
+
+	/**
  	* Accessor Method for actor ID
  	*
  	* @return int value of actor ID
@@ -90,7 +120,7 @@ class ActorProfile {
 	/**
 	 * Mutator Method for actor name
 	 *
-	 * @param mixed $newActorName: name for for a new actor
+	 * @param string $newActorName: name for for a new actor
 	 * @throws InvalidArgumentException if $newActorName is insecure or empty
 	 * @throws RangeException if $newActorName is too large for the database
 	 *
@@ -158,7 +188,7 @@ class ActorProfile {
 	/**
 	 * Mutator Method for actors birth name
 	 *
-	 * @param mixed $newBirthName: birth name for a new actor
+	 * @param string $newBirthName: birth name for a new actor
 	 * @throws InvalidArgumentException if $newBirthName is insecure or empty
 	 * @throws RangeException if $newBirthName is to large for the database
 	 *
@@ -219,5 +249,3 @@ class ActorProfile {
 
 
 }  // close class actorProfile
-
-?>
