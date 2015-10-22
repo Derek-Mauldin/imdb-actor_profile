@@ -194,6 +194,9 @@ class ActorProfile {
 	/**
 	 *Mutator Method for this actors height
 	 *
+	 * @param $newHeight string: the height of this new actor
+	 * @throws InvalidArgumentException if the string is insecure or empty
+	 * @throws RangeException if the string is to long
 	 *
 	 **/
 	public function setHeight($newHeight) {
