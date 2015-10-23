@@ -255,5 +255,34 @@ class ActorProfile {
 		$this->height = $newHeight;
 	}
 
+	/**
+	 * inserts this actore into mySQL
+	 *
+	 * @param PDO $pdo PDO connection object
+	 * @throws PDOException when actorId is not null indicating that the entry already exists
+	 **/
+	public function insert(PDO $pdo) {
+
+		//check if actrId is null if not throw PDOException
+		if($this->actorId !== null) {
+			throw(new PDOException("Actor Already Exists on Database"));
+		}
+
+		//Query Template
+		$query = "INSERT INTO actorProfile(actorName, birthday, birthName, height)
+                VALUES (:actorName, :birhtday, :birthName, :height)";
+		$statement = $pdo->prepare($query);
+
+		//Bind variables to the places holders in the template
+		$formattedDate = $this->birthday->format("Y-m-d H-i-s");
+		$parameters = array("actorName" => $this->actorName, "birthday" => $formattedDate,
+			                 "birthName" => $this->birthName, "height" => $this->height );
+		$statement->execute($parameters);
+
+		//Add mySQL created actorId to this actorProfile
+		$this->actorId = intval($pdo->lastInsertId());
+
+	}
+
 
 }  // close class actorProfile
