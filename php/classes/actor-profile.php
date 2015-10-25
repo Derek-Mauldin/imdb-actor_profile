@@ -277,6 +277,7 @@ class ActorProfile {
 		$formattedDate = $this->birthday->format("Y-m-d H-i-s");
 		$parameters = array("actorName" => $this->actorName, "birthday" => $formattedDate,
 			                 "birthName" => $this->birthName, "height" => $this->height );
+
 		$statement->execute($parameters);
 
 		//Add mySQL created actorId to this actorProfile
@@ -303,6 +304,35 @@ class ActorProfile {
 
 		// bind member variables to placeholder in the template
 		$parameters = array("actorId" => $this->actorId);
+
+		$statement->execute($parameters);
+
+	}
+
+	/**
+	 * function updates Actor Profile in mySQL
+	 *
+	 * @param PDO $pdo is a PDO connection object
+	 * @throws PDOException when the actorId is null; profile does not exists
+	 */
+	public function updateActorProfile(PDO $pdo) {
+
+		// enforce actorId is not null; cannot update a proflie that does not exist
+		if($this->actorId === null) {
+			throw (new PDOException("unable to update Actor Profile that does not exist"));
+		}
+
+		// create query template
+		$query = "UPDATE actorProfile SET actorName = :actorName, birthday = :birthday,
+													 birthName = :birthName, height = :height
+                WHERE actorId = :actorId";
+		$statement = $pdo->prepare($query);
+
+		// bind member variables to the places holders in the template
+		$formattedBirthDate = $this->birthday->format("Y-m-d H-i-s");
+		$parameters = array("actorId" => $this->actorId, "actorName" => $this->actorName, "birthday" => $formattedBirthDate,
+		                    "birthName" => $this->birthName, "height" => $this->height);
+
 		$statement->execute($parameters);
 
 	}
