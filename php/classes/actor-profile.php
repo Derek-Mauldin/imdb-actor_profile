@@ -256,12 +256,12 @@ class ActorProfile {
 	}
 
 	/**
-	 * inserts this actore into mySQL
+	 * inserts this actor into mySQL
 	 *
 	 * @param PDO $pdo PDO connection object
 	 * @throws PDOException when actorId is not null indicating that the entry already exists
 	 **/
-	public function insert(PDO $pdo) {
+	public function insertActorProfile(PDO $pdo) {
 
 		//check if actrId is null if not throw PDOException
 		if($this->actorId !== null) {
@@ -284,5 +284,27 @@ class ActorProfile {
 
 	}
 
+	/**
+	 * this function deletes this Actor Profile from mySQL
+	 *
+	 * @param PDO $pdo is a PDO connection object
+	 * @throws PDOException when actorId is null
+	 */
+	public function deleteActorProfile(PDO $pdo) {
+
+		// enforce that a profile with actorId set to null cannot be deleted
+		if($this->actorId === null) {
+			throw(new PDOException("Unable to delete profile that does not exist"));
+		}
+
+		// create query template
+		$query = "DELETE FROM actorProfile WHERE actorId = :actorId";
+		$statement = $pdo->prepare($query);
+
+		// bind member variables to placeholder in the template
+		$parameters = array("actorId" => $this->actorId);
+		$statement->execute($parameters);
+
+	}
 
 }  // close class actorProfile
